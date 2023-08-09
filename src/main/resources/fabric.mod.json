@@ -3,23 +3,23 @@
 	"id": "noeatcrop",
 	"version": "${version}",
 	"name": "NoEatCrop",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This mod is designed to prevent accidentally eating crops when planting potatoes and carrots.",
 	"authors": [
-		"Me!"
+		"Danny Dorazio"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://dorazio.me/",
+		"sources": "https://github.com/dannydorazio/NoEatCrop"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/noeatcrop/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"me.dorazio.noeatcrop.ExampleMod"
+			"me.dorazio.noeatcrop.NoEatCrop"
 		],
 		"client": [
-			"me.dorazio.noeatcrop.ExampleModClient"
+			"me.dorazio.noeatcrop.NoEatCropClient"
 		]
 	},
 	"mixins": [
