@@ -19,13 +19,6 @@
 			"me.dorazio.noeatcrop.NoEatCrop"
 		]
 	},
-	"mixins": [
-		"noeatcrop.mixins.json",
-		{
-			"config": "noeatcrop.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.14.22",
 		"minecraft": "~1.20.1",
