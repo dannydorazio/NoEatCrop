@@ -5,18 +5,22 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class NoEatCrop implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-    public static final Logger LOGGER = LoggerFactory.getLogger("noeatcrop");
+import net.fabricmc.fabric.api.event.player.UseItemCallback;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.world.World;
 
+public class NoEatCrop implements ModInitializer {
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
+		UseItemCallback.EVENT.register((PlayerEntity player, World world, Hand hand) -> {
+			if (player.getStackInHand(hand).getItem() == Items.POTATO || player.getStackInHand(hand).getItem() == Items.CARROT) {
+				return new TypedActionResult<>(ActionResult.FAIL, player.getStackInHand(hand));
+			}
+			return new TypedActionResult<>(ActionResult.PASS, player.getStackInHand(hand));
+		});
 	}
 }
