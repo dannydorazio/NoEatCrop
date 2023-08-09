@@ -17,9 +17,6 @@
 	"entrypoints": {
 		"main": [
 			"me.dorazio.noeatcrop.NoEatCrop"
-		],
-		"client": [
-			"me.dorazio.noeatcrop.NoEatCropClient"
 		]
 	},
 	"mixins": [
